@@ -18,7 +18,7 @@ function RecipeList(props) {
      <Carousel showArrows={true} swipeable={true} showStatus={false} emulateTouch={true}  infiniteLoop={true} 
          useKeyboardArrows={true} autoPlay={true} showIndicators={true} showThumbs={false} interval={5000} >
          
-         {recipes.map(recipe => <Recipe key={recipe.id} {...recipe}/>)}
+         {recipes.map(recipe => <Recipe key={recipe.id} {...recipe} displayClass="centered" />)}
      </Carousel>
    
    </div>   
@@ -30,13 +30,14 @@ class Recipe extends React.Component {
     const recipe = this.props;
     const recipeStyle = this.props.recipeStyle;
     const sumStyle = this.props.sumStyle;
+    const displayClass = this.props.displayClass;
 
     if (recipe == undefined) { return null; }
     if (recipe.tags == undefined) { return null; }
     var postTime = new Date(0); // The 0 there is the key, which sets the date to the epoch
     postTime.setUTCSeconds(recipe._ts);
 
-    return ( <div className="row centered" > 
+    return ( <div className={"row " + displayClass} > 
         <NavLink to={'./viewrecipe/'+recipe.id} className={'column clickable small-12 medium-6 large-8 labeled imageDiv ' + recipeStyle }> 
             <h6>
                 {recipe.title}
@@ -292,7 +293,7 @@ class Home extends React.Component {
             </div>
             <div className="row limited" >
               <div className="bigRecipeView"> 
-                  <Recipe key={this.state.recipe.id} {...this.state.recipe} recipeStyle="homeLink" sumStyle="sumSection" />
+                  <Recipe key={this.state.recipe.id} {...this.state.recipe} recipeStyle="homeLink" sumStyle="sumSection" displayClass="" />
               </div>
             </div>
 
