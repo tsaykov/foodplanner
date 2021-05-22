@@ -7,7 +7,7 @@ class Comment extends React.Component {
 
 	render() {
   	    const comment = this.props;
-        //console.log(comment);
+
         var postTime = new Date(0); // The 0 there is the key, which sets the date to the epoch
         postTime.setUTCSeconds(comment._ts);
 
@@ -27,7 +27,6 @@ class Comment extends React.Component {
         </div>  );
         }
 }
-
 
 export default Comment;
   

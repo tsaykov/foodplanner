@@ -23,7 +23,7 @@ function RecipeList(props) {
    
    </div>   
 }
- 
+
 
 class Recipe extends React.Component {
   render() {
@@ -79,6 +79,7 @@ class Home extends React.Component {
       isAuthenticated: this.props.authcontext.isAuthenticated,
       activePlan: false,
       loaderClass: "loader",
+      readyClass: "hidden",
       ready: false,
       fatalError: false,
       wasAuthenticated: "none",
@@ -225,7 +226,7 @@ class Home extends React.Component {
 
     }
     finally {
-      this.setState({ loaderClass: "" });
+      this.setState({ loaderClass: "", readyClass: "visible" });
     }
 
   }
@@ -274,7 +275,7 @@ class Home extends React.Component {
                       <h1 id="loadingData" className={this.state.loaderClass}>{this.props.title}</h1>
                   </section>
 
-                  <h1 id="homeScreenH1">Някои от нашите предложения</h1>
+                  <h1 id="homeScreenH1" className={this.state.readyClass}>Някои от нашите предложения</h1>
                   <RecipeList recipes={this.state.recipes} />
                   
                 </div>
@@ -308,7 +309,7 @@ class Home extends React.Component {
                   </NavLink>
                 </div> 
                 <div className="row limited" >
-                  <h1 id="homeScreenH1">Някои от нашите предложения</h1>
+                  <h1 id="homeScreenH1" className={this.state.readyClass}>Някои от нашите предложения</h1>
                   <RecipeList recipes={this.state.recipes} />
                 </div>
               </>;

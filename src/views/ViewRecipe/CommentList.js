@@ -15,12 +15,10 @@ class CommentList extends React.Component {
    
     async fetchComments() {
       const recipeId = this.props.recipeId;
-      console.log("loading comments");
       const resp = await axios.get(`https://f-newrecipe.azurewebsites.net/api/comments/${recipeId}`);
       
       this.setState({comments: resp.data.reverse()});
       document.getElementById("loadingComments").className = document.getElementById("loadingComments").className.replace( /(?:^|\s)loader(?!\S)/g , '' );
-      console.log(document.getElementById("loadingComments").className); 
   
     };
   

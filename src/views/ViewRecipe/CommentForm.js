@@ -11,8 +11,6 @@ class CommentForm extends React.Component {
     constructor(props) {
       super(props);
       const recipeId = this.props.recipeId;
-      //console.log(recipeId);
-      let refreshGuid = Math.random();
   
       this.onChangeRating = (newValue) => { 
           this.setState({ ratingValue: newValue });
@@ -23,7 +21,6 @@ class CommentForm extends React.Component {
   
         if (!document.getElementById("root_comment").value) {
           console.log("no data to submit");
-          //console.log(details);
   
           var elements = document.getElementsByClassName('MuiTypography-colorTextSecondary');
           for (var i in elements) {
@@ -57,7 +54,6 @@ class CommentForm extends React.Component {
           catch { authorname = "anonymous"; }
           
           var fData = `{ author: "${author}", username: "${authorname}", recipeId: "${recipeId}", "rating": "${this.state.ratingValue}", "text": "${ document.getElementById("root_comment").value}" }`;
-          console.log("Posting", fData);
           document.getElementById("root_comment").disabled = true;
   
           fetch("https://f-newrecipe.azurewebsites.net/api/AddComment?code=XLuvaPKoxnL1s4BNzxQrkYigRfCBfC7n53KYWta8fl/Wp/ETqoRY2w==", {
@@ -71,15 +67,12 @@ class CommentForm extends React.Component {
               .then(response => response.json())
               .then(response => {
                 console.log(response)
-              }).then((response) =>{
-  
-                console.log("Comment posted."); 
+              }).then(() =>{
                 this.setState({ commentsListState: Math.random() });    
                 console.log(this.state.commentsListState); 
               })
               
           .catch(err => {
-              console.log('Exception posting comment.. ');
               console.log(err);        
   
           })  

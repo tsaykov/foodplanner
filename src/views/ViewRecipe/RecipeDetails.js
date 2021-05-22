@@ -17,30 +17,14 @@ class RecipeDetails extends React.Component {
             fetch("https://prod-150.westeurope.logic.azure.com:443/workflows/ce718a36915b4320af21a3223ea092d5/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=lFjRs2Suo6voZqquIl75wO1sW3-turFVufFQtzhYnkw&id=" +  this.props.details.id + "&r=" + this.props.authcontext.account.idTokenClaims.emails[0], {
                 "method": "GET"
                 })
-                .then(response => {
-                console.log(response)
-                }).then((response) =>{
-
-                console.log("Initiated email send."); 
-                })
-                
             .catch(err => {
-                console.log('Exception sending ingredients.. ');
                 console.log(err);        
-
             })  
-            .finally( () => {
-                console.log('Finally.. ');
-            })
-
-            console.log("send");
         }   
- 
-  }
+    }
   
-  render() {
+    render() {
         const details = this.props.details;
-        const sent = this.props.sent;
 
         if ( details == undefined ) {
             return <div />;
@@ -50,14 +34,12 @@ class RecipeDetails extends React.Component {
             return <div />;
         }
 
-        var postTime = new Date(0); // The 0 there is the key, which sets the date to the epoch
+        var postTime = new Date(0);
         postTime.setUTCSeconds(details._ts);
-        // console.log(details.ingredients);
-        console.log(details);
         
         var sendMailLink;
         if (this.state.sent) {
-            console.log("an email was already sent");
+            console.log("емайл вече беше изпратен");
             sendMailLink = <span><i>Изпратен имейл</i></span>;
         
         } 
@@ -116,6 +98,5 @@ class RecipeDetails extends React.Component {
         </> );
   }
 }
-
 
 export default RecipeDetails;

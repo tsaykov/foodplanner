@@ -8,16 +8,14 @@ class App extends React.Component {
       title: 'зареждане...',
     };
   
-
     async componentDidMount() {
       const resp = await axios.get(`https://f-newrecipe.azurewebsites.net/api/recipe/${this.props.id}`);
       this.setState({details: resp.data[0]});
-      console.log(resp.data[0].title);
       this.setState({title: resp.data[0].title});
       document.getElementById("loadingData").className = document.getElementById("loadingData").className.replace( /(?:^|\s)loader(?!\S)/g , '' )
     }    
   
-      render() {
+    render() {
         return (
         <main>
 

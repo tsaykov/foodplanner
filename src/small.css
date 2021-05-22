@@ -347,7 +347,8 @@ main img {
 #homeScreenH1 {
     color: #116233;
     font-weight: 400;
-    font-size: 1.3rem;
+    font-size: 1.45rem;
+    padding-bottom: 10px;
 }
 
 .unauth.limited h4 {
@@ -801,11 +802,6 @@ hr {
     color: #014218;
     padding-bottom: 10px;
     margin-top: 10px;
-}
-
-#homeScreenH1 {
-    font-size: 1.45rem;
-    padding-bottom: 10px;
 }
 
 .paddown {
