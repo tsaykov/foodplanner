@@ -340,7 +340,7 @@ class Home extends React.Component {
                 <h1 id="loadingData" className={this.state.loaderClass}>{this.props.title}</h1>
             </section>
 
-            <h1 id="homeScreenH1">Някои от нашите предложения</h1>
+            <h1 id="homeScreenH1" className={this.state.readyClass}>Някои от нашите предложения</h1>
             <RecipeList recipes={this.state.recipes} />
             
           </div>
