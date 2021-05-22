@@ -59,8 +59,10 @@ export const msalApp = new UserAgentApplication({
     validateAuthority: false,
     //redirectUri: 'http://localhost:3000',
     //postLogoutRedirectUri: 'http://localhost:3000',
-    redirectUri: 'https://foodplannerweb.blob.core.windows.net/web/index.html',
-    postLogoutRedirectUri: 'https://foodplannerweb.blob.core.windows.net/web/index.html',
+    //redirectUri: 'https://foodplannerweb.blob.core.windows.net/web/index.html',
+    //postLogoutRedirectUri: 'https://foodplannerweb.blob.core.windows.net/web/index.html',
+    redirectUri: 'https://purple-water-065604103.azurestaticapps.net',
+    postLogoutRedirectUri: 'https://purple-water-065604103.azurestaticapps.net',
     navigateToLoginRequestUrl: false
   },
   cache: {

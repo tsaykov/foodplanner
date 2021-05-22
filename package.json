@@ -2,7 +2,6 @@
   "name": "food-planner",
   "version": "0.1.0",
   "private": true,
-  "homepage": "web",
   "dependencies": {
     "@azure/msal-browser": "^2.12.1",
     "@azure/msal-react": "^1.0.0-beta.0",
