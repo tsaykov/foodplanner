@@ -1,0 +1,15 @@
+{  
+  "persons": {
+   
+     "ui:options": {
+      "orderable": false
+    }
+  },
+  "preferences": {
+    "tags": {
+      "ui:options": {
+        "orderable": false
+      }
+    }
+  }
+}

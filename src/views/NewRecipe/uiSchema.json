@@ -1,0 +1,30 @@
+{
+  "instructions": {
+
+    "ui:field": "rte",
+    "rte": {
+       "format": "html"
+      }
+       
+    },
+  
+  
+  "complexity": {
+    "ui:widget": "radio",
+    "ui:options": {
+      "inline": true
+    }
+  },
+ 
+  
+
+    "image": {
+      "ui:options": {
+        "accept": ".png, .jpg"
+      }
+  },
+
+    "title": {
+      "ui:placeholder": "Име на ястието"
+  }  
+}

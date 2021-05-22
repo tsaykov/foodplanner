@@ -1,0 +1,90 @@
+{ 
+  "type": "object",
+  "required": [
+    "title", "complexity", "cookingTime", "portions", "ingredients", "imag", "instructions"
+  ],
+  "properties": {
+
+    "title": {
+      "type": "string",
+      "title": "Заглавие"
+    },
+
+    "imag": {
+      "type": "string",
+      "format": "data-url",
+      "title": "Снимка на ястието"
+    },
+
+    "complexity": {
+      "type": "string",
+      "title": "Сложност",
+      "enum": [
+        "лесна",
+        "средна",
+        "трудна"
+      ]
+    },
+    "cookingTime": {
+      "type": "number",
+      "title": "Време за готвене (мин)",
+      "enum": [ 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120 ]
+    },
+
+    "portions": {
+      "type": "number",
+      "title": "Порции",
+      "enum": [ 2, 4, 6, 8, 10, 12 ]
+    },
+
+
+    "tags": {
+      "type": "array",
+      "title": "Тагове",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": [ "закуска", "тестени", "десерти", "салати", "супи", "основни", "скара", "българска", "азиатска", "италианска", "интернационална" ]
+      }
+    },
+
+    "ingredients": {
+      "type": "array",
+      "title": "Съставки",
+      "items": {
+        "type": "object",
+        "required": [
+          "title", "quantity", "type"
+        ],
+        "properties": {
+         "title": {
+            "type": "string",
+            "title": "Продукт"
+          },
+          "quantity": {
+            "type": "number",
+            "title": "Количество"
+          },
+          "type": {
+            "type": "string",
+            "title": "Вид",
+            "default": "броя",
+          "enum": [
+            "броя",
+            "грама", "килограма",
+            "милилитра", "литра",
+            "чаени лъжици", "супени лъжици",
+            "чаени чаши", "кафени чаши"
+          ]
+          }
+        }
+      }
+    },
+
+    "instructions": {
+      "type": "string",
+      "title": "Инструкции"
+    }
+
+  }
+}

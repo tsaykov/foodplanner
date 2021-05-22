@@ -1,0 +1,47 @@
+{
+
+  "type": "object",
+
+  "properties": {
+  
+    "persons": {
+      "type": "array",
+      "minItems": 1,
+      "title": "Членове на домакинството",
+      "items": {
+        "type": "object",
+        "required": [
+          "title"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Име"
+          },
+
+    "likes": {
+      "type": "array",
+      "title": "Любими продукти",
+      "items": {
+        "type": "string",
+        "enum": "***PRODUCTS***"
+      },
+      "uniqueItems": true
+    },
+    
+    "dislikes": {
+      "type": "array",
+      "title": "Нежелани продукти",
+      "items": {
+        "type": "string",
+        "enum": "***PRODUCTS***"
+      },
+      "uniqueItems": true
+    }
+    
+    
+        }
+      }
+    }
+  }
+}

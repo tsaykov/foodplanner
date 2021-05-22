@@ -1,0 +1,1 @@
+(function(x){x.open('GET','/en-US/config',false);x.send();window.$C=JSON.parse(x.responseText)})(new XMLHttpRequest());

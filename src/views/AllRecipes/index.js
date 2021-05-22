@@ -1,0 +1,1 @@
+export { default as AllRecipes } from './AllRecipes';

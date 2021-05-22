@@ -1,0 +1,14 @@
+{
+
+  "type": "object",
+
+  "properties": {
+
+      "comment": {
+         "type": "string",
+         "title": "Въведи нов коментар тук",
+         "description": "Въведи коментар"
+            
+      }
+  }
+}

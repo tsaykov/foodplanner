@@ -1,0 +1,11 @@
+@media only screen and (min-width: 1140px) {
+
+    .large-4 {flex-basis: 33.3333%;}
+    .large-6 {flex-basis: 50%;}
+    .large-8 {flex-basis: 66.6666%;}
+
+    nav ul {margin-left: 2vw;}
+    nav li {width:auto;}
+    nav a {padding: .7rem 1.5rem;}
+    
+} /* end of media query */
