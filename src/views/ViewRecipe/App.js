@@ -9,7 +9,7 @@ class App extends React.Component {
     };
   
     async componentDidMount() {
-      const resp = await axios.get(`https://f-newrecipe.azurewebsites.net/api/recipe/${this.props.id}`);
+      const resp = await axios.get(`https://f-newrecipe.azurewebsites.net/api/recipe/${this.props.id}?code=Y20EqwJz8GDjlartA3/T2b6QQQlNtnOxwaQdoXeOVs3opAOzWblAug==`);
       this.setState({details: resp.data[0]});
       this.setState({title: resp.data[0].title});
       document.getElementById("loadingData").className = document.getElementById("loadingData").className.replace( /(?:^|\s)loader(?!\S)/g , '' )
