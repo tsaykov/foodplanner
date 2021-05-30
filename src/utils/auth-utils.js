@@ -1,5 +1,11 @@
 import { UserAgentApplication } from 'msal';
 
+const foodPlannerURL = window.location.origin;  
+//const foodPlannerURL = 'http://localhost:3000';
+//const foodPlannerURL = 'https://purple-water-065604103.azurestaticapps.net';
+
+console.log(foodPlannerURL);
+
 export const requiresInteraction = (errorMessage) => {
   if (!errorMessage || !errorMessage.length) {
     return false;
@@ -26,10 +32,6 @@ export const isIE = () => {
   const ua = window.navigator.userAgent;
   const msie = ua.indexOf('MSIE ') > -1;
   const msie11 = ua.indexOf('Trident/') > -1;
-
-  // If you as a developer are testing using Edge InPrivate mode, please add "isEdge" to the if check
-  // const isEdge = ua.indexOf("Edge/") > -1;
-
   return msie || msie11;
 };
 
@@ -57,12 +59,8 @@ export const msalApp = new UserAgentApplication({
     clientId: '07b60443-8a9d-4ff4-b105-248185360cae',
     authority: 'https://foodplanner.b2clogin.com/tfp/foodplanner.onmicrosoft.com/B2C_1_SignupOrSignin/',
     validateAuthority: false,
-    //redirectUri: 'http://localhost:3000',
-    //postLogoutRedirectUri: 'http://localhost:3000',
-    //redirectUri: 'https://foodplannerweb.blob.core.windows.net/web/index.html',
-    //postLogoutRedirectUri: 'https://foodplannerweb.blob.core.windows.net/web/index.html',
-    redirectUri: 'https://purple-water-065604103.azurestaticapps.net',
-    postLogoutRedirectUri: 'https://purple-water-065604103.azurestaticapps.net',
+    redirectUri: foodPlannerURL,
+    postLogoutRedirectUri: foodPlannerURL,
     navigateToLoginRequestUrl: false
   },
   cache: {

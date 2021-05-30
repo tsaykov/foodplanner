@@ -25,22 +25,9 @@ export default (C) =>
     }
 
     async acquireToken(request, redirect) {
-      console.log("acquire token");
-      console.log("request");
-      console.log(request);
-
-
-      console.log("request.scopes");
-
-      console.log(request.scopes);
-
-      
-
       return msalApp
         .acquireTokenSilent(request)
         .then((loginResponse) => {
-          console.log("there is a login response");
-          console.log(loginResponse);
           if (loginResponse) {
             this.setState({
               account: loginResponse.account,
@@ -51,8 +38,6 @@ export default (C) =>
           }
         })
         .catch((error) => {
-          // Call acquireTokenPopup (popup window) in case of acquireTokenSilent failure
-          // due to consent or interaction required ONLY
           if (requiresInteraction(error.errorCode)) {
             this.setState({
               isAuthenticated: false,
@@ -118,30 +103,6 @@ export default (C) =>
             isAuthenticated: true,
           });
         } else {
-
-          
-
-
-      console.log("AUTH_REQUESTS");
-
-      console.log(AUTH_REQUESTS);
-
-
-      console.log("AUTH_REQUESTS.REFRESH_TOKEN");
-
-      console.log(AUTH_REQUESTS.REFRESH_TOKEN);
-
-
-      console.log("process");
-
-      console.log(process);
-
-
-      console.log("process.env.REACT_APP_CLIENT_ID");
-
-      console.log(process.env.REACT_APP_CLIENT_ID);
-
-      
 
            this.acquireToken(AUTH_REQUESTS.REFRESH_TOKEN, useRedirectFlow);
         }
