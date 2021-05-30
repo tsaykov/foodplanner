@@ -45,7 +45,6 @@ class App extends React.Component {
             toPost
           })
         })
-        .then(response => response.json())
         .then(() => {
           try { document.getElementById("loader").className += " hidden"; } catch {}
           try { document.getElementById("submitButton").className = document.getElementById("submitButton").className.replace( /(?:^|\s)hidden(?!\S)/g , '' ); } catch {}

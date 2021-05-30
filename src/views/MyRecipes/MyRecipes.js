@@ -44,6 +44,7 @@ class Recipe extends React.Component {
         {
           label: 'Да',
           onClick: () => {
+            console.log(this.props.id);
             axios.get(`https://f-newrecipe.azurewebsites.net/api/reciperaw/${this.props.id}?code=eyi8NJWkHnQtf5aGIWrJGAJJ1Kxgocf9cerGcRR4DV0w36xVJLXIdg==`).then(response => {
               const recipe = response.data[0];
 
@@ -57,7 +58,6 @@ class Recipe extends React.Component {
                   recipe
                 )
               })
-              .then(response => response.json())
               .then(() => {
                 this.props.rerenderParentCallback();
               })
@@ -78,7 +78,6 @@ class Recipe extends React.Component {
               })
 
             })
-            .then(response => response.json())  
             .catch(err => {
               
               console.log(err);
