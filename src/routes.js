@@ -9,7 +9,6 @@ import { MyRecipes } from './views/MyRecipes';
 import { EditRecipe } from './views/EditRecipe';
 import { AllRecipes } from './views/AllRecipes';
 import { ViewRecipe } from './views/ViewRecipe';
-import { Fail } from './views/Fail';
 import { NavBar } from './components/NavBar';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Title from './Title';
@@ -41,7 +40,7 @@ class Routes extends React.Component {
           <Route exact path="/viewrecipe/:id" render={(props) => <ViewRecipe authcontext={ this.context } />}  />   
           <Route exact path="/QuickRecipe" render={(props) => <QuickRecipe authcontext={ this.context } />} />      
           <Route exact path="/HouseHold" render={(props) => <HouseHold authcontext={ this.context } />} />    
-          <Route exact path="/Fail" component={Fail} />     
+ 
         </Switch>
       </div>
     )
