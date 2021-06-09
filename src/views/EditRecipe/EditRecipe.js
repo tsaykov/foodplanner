@@ -35,7 +35,7 @@ class App extends React.Component {
 
         console.log("Posting", JSON.stringify(toPost));
              
-        fetch("https://f-newrecipe.azurewebsites.net/api/UpdateRecipe?code=p4xJNWSRPhOnYfT90ay8PRavR1IT49JzF8di3FcxDCiy7WUfTFi3Ow==", {
+        fetch(" UpdateRecipe?code=p4xJNWSRPhOnYfT90ay8PRavR1IT49JzF8di3FcxDCiy7WUfTFi3Ow==", {
           "method": "POST",
           "headers": {
             "content-type": "application/json",
